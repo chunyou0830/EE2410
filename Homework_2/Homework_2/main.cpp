@@ -15,11 +15,12 @@ double matrix2[LEVEL][LEVEL+1];
 void print(){
     for(int i=0; i<LEVEL; i++){
         for(int j=0; j<=LEVEL; j++){
-            cout << matrix2[i][j]<< " ";
+            cout << matrix[i][j]<< " ";
         }
         cout << endl;
     }
     cout << "---------------------------------\n";
+    system("pause");
 }
 
 int main()
@@ -31,38 +32,35 @@ int main()
     //Read file----------
     read.open("equations.data.txt", ios::in);
 
-    /*if(!read){
+    if(!read){
         cout << "Open file failure!";
         exit(1);
-    }*/
+    }
 
     for(int i=0; i<LEVEL; i++){
         for(int j=0; j<LEVEL; j++){
             read >> matrix[i][j] >> buffer;
-            cout << matrix[i][j] << " ";
         }
         read >> matrix[i][LEVEL];
-        cout << matrix[i][LEVEL] << endl;
     }
 
     read.close();
 
-    cout << "---------------------------------\n";
+    //print();
 
     //Upper triangle calculate-----
     for(int element=0; element<LEVEL; element++){
         for(int row=element; row<LEVEL; row++){
             double times=-(matrix[row][element]/matrix[element][element]);
+            cout << "ELEMENT: " << matrix[element][element] << endl;
             for(int col=0; col<=LEVEL; col++){
-                matrix2[row][col] = matrix[row][col]+(matrix[element][col]*times);
-                //cout << matrix2[row][col]<< " ";
+                //cout << "(" << row << "," << col << "):" << matrix[row][col]+(matrix[element][col]*times) << "!" << endl;
+                matrix[row][col] += (matrix[element][col]*times);
             }
-            cout << endl;
         }
-        cout << endl;
-        print();
-        system("pause");
     }
+    //print();
+
     return 0;
 }
 
