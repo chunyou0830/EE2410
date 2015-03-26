@@ -9,8 +9,8 @@ using namespace std;
 
 //Def
 #define LEVEL 5
-int matrix[LEVEL][LEVEL+1];
-int matrix2[LEVEL][LEVEL+1];
+double matrix[LEVEL][LEVEL+1];
+double matrix2[LEVEL][LEVEL+1];
 
 void print(){
     for(int i=0; i<LEVEL; i++){
@@ -50,17 +50,17 @@ int main()
     cout << "---------------------------------\n";
 
     //Upper triangle calculate-----
-    for(int elem=0; elem<LEVEL; elem++){
-        for(int row=elem; row<LEVEL; row++){
-            float times=-(matrix[row][elem]/matrix[elem][elem]);
+    for(int element=0; element<LEVEL; element++){
+        for(int row=element; row<LEVEL; row++){
+            double times=-(matrix[row][element]/matrix[element][element]);
             for(int col=0; col<=LEVEL; col++){
-                matrix2[row][col]=matrix[row][col]+(matrix[elem][col]*times);
-                print();
+                matrix2[row][col] = matrix[row][col]+(matrix[element][col]*times);
                 //cout << matrix2[row][col]<< " ";
             }
             cout << endl;
         }
         cout << endl;
+        print();
         system("pause");
     }
     return 0;
