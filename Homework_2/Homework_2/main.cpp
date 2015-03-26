@@ -31,10 +31,10 @@ int main()
     //Read file----------
     read.open("equations.data.txt", ios::in);
 
-    if(!read){
+    /*if(!read){
         cout << "Open file failure!";
         exit(1);
-    }
+    }*/
 
     for(int i=0; i<LEVEL; i++){
         for(int j=0; j<LEVEL; j++){
