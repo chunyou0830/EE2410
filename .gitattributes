@@ -1,5 +1,4 @@
 # Auto detect text files and perform LF normalization
-*.rb linguist-language=C++
 * text=auto
 
 # Custom for Visual Studio
