@@ -31,7 +31,7 @@ int main()
 
     //Move
     start=clock();
-    MovePile(disk,1,2,3);
+    MovePile(disk,1,3,2);
     stop=clock();
 
     //Time Calculation
