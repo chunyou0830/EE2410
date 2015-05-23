@@ -1,4 +1,6 @@
-// Finding equivalence classes
+/* EE2410 Data Structure
+ * Homework 3 - Finding equivalence classes
+ * Yang, Chun You  103061142 */
 
 #include <iostream>
 #include <fstream>
@@ -99,6 +101,7 @@ int main()
         in_file.close();
 
         equivalence(seq, out, n);
+
         cout << endl;
 
         cout << "THERE ARE IN TOTAL " << total << " Equiv.Classes" << endl;
