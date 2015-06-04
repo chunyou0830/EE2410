@@ -1,3 +1,6 @@
+/* EE2410 Data Structure
+ * Homework 4 - Building a dictionary
+ * Yang, Chun You  103061142 */
 #include <iostream>
 #include <cstdlib>
 #include <fstream>
